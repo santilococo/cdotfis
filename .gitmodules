@@ -1,0 +1,3 @@
+[submodule "sadedot"]
+	path = sadedot
+	url = git@github.com:santilococo/sadedot.git
