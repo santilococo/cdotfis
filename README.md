@@ -44,6 +44,14 @@ Note that you can modify the `sadedot/scripts/install.sh` if you want to install
 
 You must install `libnewt` or `dialog`.
 
+## Updating
+
+To keep your fork up to date with additions to the `sadedot` submodule, you must run:
+
+```bash
+sh sadedot/scripts/update.sh
+```
+
 ## Contributing <a name="contributing"></a>
 PRs are welcome.
 
