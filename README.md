@@ -1,4 +1,4 @@
-# sadedot
+# dotfiles
 
 Backup all your dotfiles (and easily deploy them on another machine).
 
@@ -22,7 +22,7 @@ You should note that all these dotfiles (files or folders) will be symlinked in 
 So, to run the script:
 
 ```bash
-sh scripts/bootstrap.sh
+sh sadedot/scripts/bootstrap.sh
 ```
 
 By default the script will run with whiptail (`libnewt`).
@@ -32,13 +32,13 @@ However, the script can use both `dialog` and `whiptail` as a way to display dia
 For example, you can run
 
 ```bash
-sh scripts/bootstrap.sh -d
+sh sadedot/scripts/bootstrap.sh -d
 ```
 to use dialog.
 
 Finally, you can run the script with `-l` if you want to print the log in the `sadedot.log` file.
 
-Note that you can modify the `scripts/install.sh` if you want to install some programs on your machine when this script is run. By default, `scripts/bootstrap.sh` will not run this script, so you will need to use the `-p` flag if you want it to run `scripts/install.sh` (it will run at the end of the `scripts/bootstrap.sh` script).
+Note that you can modify the `sadedot/scripts/install.sh` if you want to install some programs on your machine when this script is run. By default, `sadedot/scripts/bootstrap.sh` will not run this script, so you will need to use the `-p` flag if you want it to run `sadedot/scripts/install.sh` (it will run at the end of the `scripts/bootstrap.sh` script).
 
 ## Dependencies <a name="dependencies"></a>
 
@@ -50,5 +50,5 @@ PRs are welcome.
 ## License <a name="license"></a>
 [MIT](https://choosealicense.com/licenses/mit/)
 
-[1]: https://github.com/santilococo/sadedot/fork
-[2]: https://github.com/santilococo/sadedot/tree/master/dotfiles/other
+[1]: https://github.com/santilococo/dotfiles/fork
+[2]: https://github.com/santilococo/dotfiles/tree/master/dotfiles/other
