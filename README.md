@@ -14,7 +14,7 @@ Personal dotfiles saved and deployed using [sadedot][3].
 
 ## Usage <a name="usage"></a>
 
-You have to move all your dotfiles to the dotfiles folder and then the `sadedot` scripts will do the symbolic links. Doing it this way, you can now upload them to your repository (to have a backup of them).
+You have to move all your dotfiles to the dotfiles folder and then a `sadedot` script will do the symbolic links. Doing it this way, you can now upload them to your repository (to have a backup of them).
 
 You should note that all these dotfiles (files or folders) will be symlinked in `$HOME`. So, if you want to symlink, for example, something in `/etc`, you have to put it in the `dotfiles/other` folder. Here you have to be careful as they will be installed in `/`. You can see an example [here][2].
 
