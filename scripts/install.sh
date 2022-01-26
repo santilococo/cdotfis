@@ -29,6 +29,9 @@ downloadAndInstallPackages() {
     if [[ ! -d "clipmenu" ]]; then
         cloneAndMake "clipmenu" "https://github.com/cdown/clipmenu.git"
     fi
+    if [[ ! -d "slock" ]]; then
+        cloneAndMake "slock" "https://github.com/santilococo/slock.git"
+    fi
 }
 
 runScript() {
