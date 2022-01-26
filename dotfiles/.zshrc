@@ -1,5 +1,5 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 HISTSIZE=10000
@@ -27,15 +27,11 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 
 function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-      [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
+    if [[ ${KEYMAP} == vicmd ]] || [[ $1 = 'block' ]]; then
+        echo -ne '\e[1 q'
+    elif [[ ${KEYMAP} == main ]] || [[ ${KEYMAP} == viins ]] || [[ ${KEYMAP} = '' ]] || [[ $1 = 'beam' ]]; then
+        echo -ne '\e[5 q'
+    fi
 }
 
 zle -N zle-keymap-select
@@ -44,8 +40,7 @@ zle-line-init() {
     zle -K viins
     echo -ne "\e[5 q"
 
-    # https://git.suckless.org/st/file/FAQ.html -> Why doesn't the Del key work in some programs?
-    echoti smkx 
+    echoti smkx # Del key: https://git.suckless.org/st/file/FAQ.html
 }
 
 zle -N zle-line-init
@@ -64,10 +59,7 @@ zle -N history-beginning-search-forward-end history-search-end
 bindkey "^[[A" history-beginning-search-backward-end
 bindkey "^[[B" history-beginning-search-forward-end
 
-# https://git.suckless.org/st/file/FAQ.html -> Why doesn't the Del key work in some programs?
-#function zle-line-init () { echoti smkx }
 function zle-line-finish () { echoti rmkx }
-#zle -N zle-line-init
 zle -N zle-line-finish
 
 source ~/.zshrc_aliases
