@@ -6,9 +6,14 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/.histfile
 
-export ZSH="/usr/share/oh-my-zsh"
-ZSH_CUSTOM="/usr/share"
-ZSH_THEME="zsh-theme-powerlevel10k/powerlevel10k"
+if [[ -v $LAPTOP ]]; then
+    export ZSH="/usr/share/oh-my-zsh"
+    ZSH_CUSTOM="/usr/share"
+    ZSH_THEME="zsh-theme-powerlevel10k/powerlevel10k"
+else
+    export ZSH="$HOME/.oh-my-zsh"
+    ZSH_THEME="powerlevel10k/powerlevel10k"
+fi
 
 # CASE_SENSITIVE="true"
 # HYPHEN_INSENSITIVE="true"
