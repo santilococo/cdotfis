@@ -6,7 +6,7 @@ cloneAndMake() {
         echo "$password" | sudo -S bash -c "" > /dev/null 2>&1
     fi
     
-    local TERM=ansi; whiptail --infobox "Downloading ${1}" 7 0
+    local TERM=ansi; whiptail --infobox "Downloading '${1}'" 7 0
     git clone "$2"
 
     makeMsg=laptop && [[ -v LAPTOP ]] || makeMsg=install
