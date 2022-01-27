@@ -5,9 +5,12 @@ cloneAndMake() {
         password=$(whiptail --passwordbox "Enter your password" 8 25 3>&1 1>&2 2>&3)
         echo "$password" | sudo -S bash -c "" > /dev/null 2>&1
     fi
+    
     local TERM=ansi; whiptail --infobox "Downloading ${1}" 7 0
     git clone "$2"
-    (cd "$1" || { echo "Couldn't cd into '$1'." 1>&2 && exit 1; }; echo "$password" | sudo make install)
+
+    makeMsg=laptop && [[ -v LAPTOP ]] || makeMsg=install
+    (cd "$1" || { echo "Couldn't cd into '$1'." 1>&2 && exit 1; }; echo "$password" | sudo make "$makeMsg")
 }
 
 downloadAndInstallPackages() {
