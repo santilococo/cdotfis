@@ -53,7 +53,6 @@ zle -N zle-line-init
 echo -ne '\e[5 q'
 preexec() { echo -ne '\e[5 q' ;}
 
-# Edit in vim: https://unix.stackexchange.com/a/90529
 export VISUAL="nvim"
 autoload edit-command-line; zle -N edit-command-line
 bindkey '^E' edit-command-line
