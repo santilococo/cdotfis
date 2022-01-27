@@ -6,7 +6,7 @@ HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/.histfile
 
-if [[ -v $LAPTOP ]]; then
+if [[ -v LAPTOP ]]; then
     export ZSH="/usr/share/oh-my-zsh"
     ZSH_CUSTOM="/usr/share"
     ZSH_THEME="zsh-theme-powerlevel10k/powerlevel10k"
