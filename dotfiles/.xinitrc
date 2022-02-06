@@ -13,14 +13,8 @@ dwmblocks &
 # Launch dunst
 dunst &
 
-# Launch time calibration
-#~/.local/bin/timeCalibration &
-
 # Launch clipboard daemon
 clipmenud &
-
-# Turn on numlock key: https://unix.stackexchange.com/a/607769
-#numlockx on
 
 # Hides mouse
 unclutter &
@@ -43,10 +37,6 @@ flameshot &
 if [[ ! -v LAPTOP ]]; then
     # Faster scrolling
     imwheel -b 45
-
-    # Use AltGr as mod key for dwm
-    #xmodmap -e "remove mod5 = ISO_Level3_Shift"
-    #xmodmap -e "add mod1 = ISO_Level3_Shift"
 
     # Move mouse focus to middle of first screen
     xdotool mousemove --sync --screen=$1 960 500
