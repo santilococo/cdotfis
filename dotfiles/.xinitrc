@@ -40,22 +40,21 @@ picom &
 # For screenshots
 flameshot &
 
-# Faster scrolling
-imwheel -b 45
+if [[ ! -v LAPTOP ]]; then
+    # Faster scrolling
+    imwheel -b 45
 
-# Use AltGr as mod key for dwm
-#xmodmap -e "remove mod5 = ISO_Level3_Shift"
-#xmodmap -e "add mod1 = ISO_Level3_Shift"
+    # Use AltGr as mod key for dwm
+    #xmodmap -e "remove mod5 = ISO_Level3_Shift"
+    #xmodmap -e "add mod1 = ISO_Level3_Shift"
 
-#~/.local/bin/screen &
-
-# Move mouse focus to middle of first screen
-xdotool mousemove --sync --screen=$1 960 500
+    # Move mouse focus to middle of first screen
+    xdotool mousemove --sync --screen=$1 960 500
+fi
 
 # Start GNOME keyring
 dbus-update-activation-environment --systemd DISPLAY
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
-#exec dwm
 exec $HOME/.local/bin/startdwm
