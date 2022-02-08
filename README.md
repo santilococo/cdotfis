@@ -1,6 +1,6 @@
 # cdotfis
 
-Personal dotfiles saved and deployed using [sadedot][3].
+Personal dotfiles saved and deployed using [sadedot][1].
 
 ## Table of contents
   - [Installation <a name="installation"></a>](#installation-)
@@ -10,7 +10,7 @@ Personal dotfiles saved and deployed using [sadedot][3].
 
 ## Installation <a name="installation"></a>
 
-[Fork][1] this repository and clone it running:
+[Fork][2] this repository and clone it running:
 
 ```bash
 git clone --recursive ${REPO_URL}
@@ -26,7 +26,7 @@ git clone --recursive git@github.com:santilococo/cdotfis.git
 
 You have to move all your dotfiles to the dotfiles folder and then a `sadedot` script will do the symbolic links. Doing it this way, you can now upload them to your repository (to have a backup of them).
 
-You should note that all these dotfiles (files or folders) will be symlinked in `$HOME`. So, if you want to symlink, for example, something in `/etc`, you have to put it in the `dotfiles/other` folder. Here you have to be careful as they will be installed in `/`. You can see an example [here][2].
+You should note that all these dotfiles (files or folders) will be symlinked in `$HOME`. So, if you want to symlink, for example, something in `/etc`, you have to put it in the `dotfiles/other` folder. Here you have to be careful as they will be installed in `/`. You can see an example [here][3].
 
 So, to run the script:
 
@@ -42,7 +42,7 @@ PRs are welcome.
 ## License <a name="license"></a>
 [MIT](https://raw.githubusercontent.com/santilococo/cdotfis/master/LICENSE.md)
 
-[1]: https://github.com/santilococo/cdotfis/fork
-[2]: https://github.com/santilococo/cdotfis/tree/master/dotfiles/other
-[3]: https://github.com/santilococo/sadedot
+[1]: https://github.com/santilococo/sadedot
+[2]: https://github.com/santilococo/cdotfis/fork
+[3]: https://github.com/santilococo/cdotfis/tree/master/dotfiles/other
 
