@@ -40,9 +40,9 @@ You can modify the `sadedot/scripts/install.sh` if you want to install some prog
 PRs are welcome.
 
 ## License <a name="license"></a>
-[MIT](https://raw.githubusercontent.com/santilococo/dotfiles/master/LICENSE.md)
+[MIT](https://raw.githubusercontent.com/santilococo/cdotfis/master/LICENSE.md)
 
-[1]: https://github.com/santilococo/dotfiles/fork
-[2]: https://github.com/santilococo/dotfiles/tree/master/dotfiles/other
+[1]: https://github.com/santilococo/cdotfis/fork
+[2]: https://github.com/santilococo/cdotfis/tree/master/dotfiles/other
 [3]: https://github.com/santilococo/sadedot
 
