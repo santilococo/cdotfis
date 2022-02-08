@@ -34,7 +34,7 @@ So, to run the script:
 sh sadedot/scripts/bootstrap.sh
 ```
 
-You can modify the `sadedot/scripts/install.sh` if you want to install some programs on your machine when this script is run. By default, `sadedot/scripts/bootstrap.sh` will not run this script, so you will need to use the `-p` flag if you want it to run `sadedot/scripts/install.sh` (it will run at the end of the script).
+You can add shell scripts to the `scripts` folder that will be run at the end of `bootstrap.sh`. By default, `sadedot/scripts/bootstrap.sh` will not run these scripts, so you will need to use the `-p` flag if you want them to run.
 
 ## Contributing <a name="contributing"></a>
 PRs are welcome.
