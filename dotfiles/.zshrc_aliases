@@ -207,19 +207,8 @@ function dcmake() {
 
 function dcstacho() {
     checkIfStarted
-    #echo `docker ps -a | awk '{ print $12 }'`
-    #read line
-    #if [ $line -eq 2 ]; then
-    #    local dockerID=`docker ps -a | awk 'NR==2 { print $12 }'`
-    #else
-    #    local dockerID=`docker ps -a | awk 'NR==3 { print $12 }'`
-    #fi
-    #local dockerID=$(docker ps -a | awk -F"\t" '{print $12}' | tail -n +2 | dmenu)
     local dockerID=$(docker ps -a --format "{{.Names}}" | dmenu)
     docker start $dockerID > /dev/null
-    #docker exec -it $dockerID bash -c 'make all 2>&1 1>/dev/null | grep --color -iP "\^|warning:|error:|"'
-    #docker stop $dockerID > /dev/null
-    #./run.sh
     docker start $dockerID > /dev/null
     docker exec -it $dockerID bash $@
 }
@@ -263,7 +252,6 @@ function dcstatpe2() {
 
 function dcsta() {
     checkIfStarted
-    #local dockerID=`docker ps -l -q`
     local dockerID=`docker ps -l`
     docker start $dockerID > /dev/null
     docker exec -it $dockerID bash $@
