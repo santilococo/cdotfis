@@ -9,7 +9,7 @@ if ! echo $PATH | grep -q "$HOME/.local/share/gem/ruby/3.0.0/bin"; then
 fi
 
 if grep -q "i5" /proc/cpuinfo; then
-    export LAPTOP
+    export LAPTOP=""
 fi
 
 if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
