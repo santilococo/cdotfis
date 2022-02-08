@@ -34,7 +34,10 @@ picom &
 # For screenshots
 flameshot &
 
-if [[ ! -v LAPTOP ]]; then
+if [[ -v LAPTOP ]]; then
+    # Enable automatic fan control
+    macfanctld
+else
     # Faster scrolling
     imwheel -b 45
 
