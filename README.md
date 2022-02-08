@@ -10,7 +10,7 @@ Personal dotfiles saved and deployed using [sadedot][1].
 
 ## Installation <a name="installation"></a>
 
-[Fork][2] this repository and clone it running:
+[Fork][2] this repository and clone it:
 
 ```bash
 git clone --recursive ${REPO_URL}
