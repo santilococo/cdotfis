@@ -26,14 +26,6 @@ sh sadedot/scripts/bootstrap.sh
 
 You can modify the `sadedot/scripts/install.sh` if you want to install some programs on your machine when this script is run. By default, `sadedot/scripts/bootstrap.sh` will not run this script, so you will need to use the `-p` flag if you want it to run `sadedot/scripts/install.sh` (it will run at the end of the script).
 
-## Updating
-
-To keep your fork up to date with additions to the `sadedot` submodule, you must run:
-
-```bash
-sh sadedot/scripts/update.sh
-```
-
 ## Contributing <a name="contributing"></a>
 PRs are welcome.
 
