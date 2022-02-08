@@ -10,7 +10,17 @@ Personal dotfiles saved and deployed using [sadedot][3].
 
 ## Installation <a name="installation"></a>
 
-[Fork][1] this repository.
+[Fork][1] this repository and clone it running:
+
+```bash
+git clone --recursive ${REPO_URL}
+```
+
+where `${REPO_URL}` is your github repository remote url (HTTPS or SSH). For example, in my case:
+
+```bash
+git clone --recursive git@github.com:santilococo/cdotfis.git
+```
 
 ## Usage <a name="usage"></a>
 
