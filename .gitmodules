@@ -1,4 +1,4 @@
 [submodule "sadedot"]
 	path = sadedot
 	url = git@github.com:santilococo/sadedot.git
-	fetchRecurseSubmodules = false
+	fetchRecurseSubmodules = on-demand
