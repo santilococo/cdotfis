@@ -56,7 +56,11 @@ alias pampero='ssh slococo@pampero.it.itba.edu.ar'
 alias bd='systemctl start postgresql.service'
 
 function compile() {
-    sudo make clean && sudo make install
+    if [ "$1" = "laptop" ]; then
+	sudo make clean && sudo make laptop
+    else
+	sudo make clean && sudo make install
+    fi
 }
 
 function rcomp() {
