@@ -43,6 +43,9 @@ else
 
     # Move mouse focus to middle of first screen
     xdotool mousemove --sync --screen=$1 960 500
+
+    # Restart network
+    ~/.local/bin/netRestart &
 fi
 
 # Start GNOME keyring
