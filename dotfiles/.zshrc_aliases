@@ -57,9 +57,9 @@ alias bd='systemctl start postgresql.service'
 
 function compile() {
     if grep -q "i5" /proc/cpuinfo; then
-	sudo make clean && sudo make laptop
+	    sudo make clean && sudo make laptop
     else
-	sudo make clean && sudo make install
+	    sudo make clean && sudo make install
     fi
 }
 
