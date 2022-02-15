@@ -1,0 +1,8 @@
+#!/bin/sh
+
+protonvpn-cli d
+#nmcli device down enp3s0
+nmcli networking off
+#sleep 1
+#nmcli device up enp3s0
+nmcli networking on
