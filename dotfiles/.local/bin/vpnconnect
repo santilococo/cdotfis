@@ -1,7 +1,9 @@
 #!/bin/sh
 
 nm-applet 2>&1 > /dev/null &
-#stalonetray 2>&1 > /dev/null
-#protonvpn
-protonvpn-cli c US-FREE#4
+if [ "$1" = "f" ]; then
+    protonvpn-cli c -f
+else
+    protonvpn-cli c US-FREE#4
+fi
 killall nm-applet
