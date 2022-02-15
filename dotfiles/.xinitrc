@@ -46,10 +46,12 @@ else
 
     # Restart network
     ~/.local/bin/netRestart &
+
+    # Fix dbus BUG with GNOME keyring
+    dbus-update-activation-environment --systemd DISPLAY
 fi
 
 # Start GNOME keyring
-dbus-update-activation-environment --systemd DISPLAY
 eval $(gnome-keyring-daemon --start)
 export SSH_AUTH_SOCK
 
