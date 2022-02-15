@@ -68,66 +68,6 @@ function rcomp() {
     R -e "rmarkdown::render('$file.rmd', 'pdf_document')" && op $file.pdf
 }
 
-function cl() {
-    nasm -f elf $1
-    local program="${1//.asm/}"
-    ld -melf_i386 $program.o -o $program
-    if [[ $# -ge 3 ]]; then
-        ./$program "${@:3}"
-    else
-        ./$program
-    fi
-}
-
-function cld() {
-    nasm -f elf $1 && nasm -f elf $2
-    local program="${1//.asm/}"
-    local library="${2//.asm/}"
-    ld -melf_i386 $program.o $library.o -o $program
-    if [[ $# -ge 3 ]]; then
-        ./$program "${@:3}"
-    else
-        ./$program
-    fi
-}
-
-function asc() {
-    nasm -f elf32 $1
-    gcc -c -m32 $2
-    local assem="${1//.asm/}"
-    local cprog="${2//.c/}"
-    gcc -m32 -no-pie $assem.o $cprog.o -o $assem
-    if [[ $# -ge 3 ]]; then
-        ./$assem "${@:3}"
-    else
-        ./$assem
-    fi
-}
-
-function ascn() {
-    nasm -f elf32 $1
-    local assem="${1//.asm/}"
-    gcc -m32 -no-pie $assem.o -o $assem
-    if [[ $# -ge 2 ]]; then
-        ./$assem "${@:2}"
-    else
-        ./$assem
-    fi
-}
-
-function ascld() {
-    nasm -f elf32 $1
-    gcc -c -m32 $2
-    local assem="${1//.asm/}"
-    local cprog="${2//.c/}"
-    ld -melf_i386 $assem.o $cprog.o -o $assem
-    if [[ $# -ge 3 ]]; then
-        ./$assem "${@:3}"
-    else
-        ./$assem
-    fi
-}
-
 function gci() {
     echo "Copy after 'git@github.com:'"
     git clone git@itba.github.com:$1
@@ -209,43 +149,6 @@ function dcstacho() {
     checkIfStarted
     local dockerID=$(docker ps -a --format "{{.Names}}" | dmenu)
     docker start $dockerID > /dev/null
-    docker start $dockerID > /dev/null
-    docker exec -it $dockerID bash $@
-}
-
-function dcruntpe() {
-    checkIfStarted
-    local dockerID='TPE-ARQUI'
-    docker start $dockerID > /dev/null
-    docker exec -it $dockerID bash -c 'make all 2>&1 1>/dev/null | grep --color -iP "\^|warning:|error:|"'
-    docker stop $dockerID > /dev/null
-    ./run.sh
-}
-
-function dcgdbtpe() {
-    checkIfStarted
-    local dockerID='TPE-ARQUI-GDB'
-    docker start $dockerID > /dev/null
-    docker exec -it $dockerID bash -c 'make all 2>&1 1>/dev/null | grep --color -iP "\^|warning:|error:|"'
-    docker stop $dockerID > /dev/null
-    ./run.sh gdb
-}
-
-function dcstatpe() {
-    checkIfStarted
-    local dockerID='TPE-ARQUI-GDB'
-    docker start $dockerID > /dev/null
-    docker exec -it $dockerID bash $@
-}
-
-function dcstotpe() {
-    local dockerID='TPE-ARQUI-GDB'
-    docker stop $dockerID > /dev/null
-}
-
-function dcstatpe2() {
-    checkIfStarted
-    local dockerID='TPE-ARQUI'
     docker start $dockerID > /dev/null
     docker exec -it $dockerID bash $@
 }
