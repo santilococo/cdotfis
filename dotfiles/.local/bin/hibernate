@@ -1,0 +1,4 @@
+#!/bin/sh
+
+sudo ~/.local/bin/disableUSB
+systemctl hibernate
