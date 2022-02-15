@@ -1,0 +1,8 @@
+#!/bin/sh
+
+sleep 3
+nmcli device down enp3s0
+#nmcli networking off
+sleep 2
+nmcli device up enp3s0
+#nmcli networking on
