@@ -23,11 +23,17 @@ alias gss='git status -s'
 alias gundo='git reset --soft HEAD~1'
 alias gck='git checkout'
 
-gamp() {
+gacp() {
     git add .
     local var="$@"
     git commit -m "$var"
     git push
+}
+
+gac() {
+    git add .
+    local var="$@"
+    git commit -m "$var"
 }
 
 alias exiftcl='exiftool -all='
