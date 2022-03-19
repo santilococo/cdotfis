@@ -31,9 +31,6 @@ picom &
 # Sound configuration
 ~/.local/bin/sound &
 
-# For screenshots
-flameshot &
-
 if [[ -v LAPTOP ]]; then
     # Enable automatic fan control
     macfanctld
