@@ -1,6 +1,7 @@
 #!/bin/sh
 
-echo EHC1 | sudo tee /proc/acpi/wakeup > /dev/null
-echo EHC2 | sudo tee /proc/acpi/wakeup > /dev/null
-echo XHC | sudo tee /proc/acpi/wakeup > /dev/null
+#echo EHC1 | sudo tee /proc/acpi/wakeup > /dev/null
+#echo EHC2 | sudo tee /proc/acpi/wakeup > /dev/null
+#echo XHC | sudo tee /proc/acpi/wakeup > /dev/null
+sudo ~/.local/bin/disableUSB
 systemctl suspend
