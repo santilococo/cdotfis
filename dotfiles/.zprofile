@@ -12,6 +12,10 @@ if grep -q "i5" /proc/cpuinfo; then
     export LAPTOP=""
 fi
 
-if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then 
-    exec startx
+if [[ -z $DISPLAY ]] && [[ $(tty) = /dev/tty1 ]]; then
+    if [ -v LAPTOP ]; then
+	exec startx &> /dev/null
+    else
+	exec startx
+    fi
 fi

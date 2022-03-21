@@ -1,17 +1,17 @@
 # Night light
-redshift -P -O 2750 &
+redshift -P -O 2750 &> /dev/null &
 
 # Disable mouse acceleration
 xset m 0 0
 
 # Restore wallpaper
-nitrogen --restore &
+nitrogen --restore 2> /dev/null &
 
 # Run dwmblocks
 dwmblocks &
 
 # Launch dunst
-dunst &
+dunst 2> /dev/null &
 
 # Launch clipboard daemon
 clipmenud &
@@ -32,7 +32,7 @@ picom &
 ~/.local/bin/sound &
 
 # For screenshots
-flameshot &
+#flameshot &
 
 if [[ -v LAPTOP ]]; then
     # Enable automatic fan control
