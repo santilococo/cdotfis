@@ -1,8 +1,7 @@
 #!/bin/sh
 
 protonvpn-cli d
-#nmcli device down enp3s0
-nmcli networking off
-#sleep 1
-#nmcli device up enp3s0
-nmcli networking on
+netDevice="$(ip -4 route ls | awk '/^default/{print $5}')"
+nmcli device down "$netDevice"
+sleep 1
+nmcli device up "$netDevice"
