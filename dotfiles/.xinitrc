@@ -34,6 +34,12 @@ picom &
 if [[ -v LAPTOP ]]; then
     # Enable automatic fan control
     macfanctld
+
+    # Set brightness
+    xbacklight -set 45
+
+    # Set the governor
+    sudo ~/.local/bin/setGovernor > /dev/null &
 else
     # Faster scrolling
     imwheel -b 45
