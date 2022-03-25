@@ -46,7 +46,7 @@ function gac() {
 }
 
 function smtp() {
-    cat "$1" | while read -r LINE; do sleep 0.1; echo "$LINE"; done | nc "$2" "${3:-25}" 
+    cat "$1" | while read -r LINE; do sleep 1; echo "$LINE"; done | ncat -C -v "$2" "${3:-25}" 
 }
 
 
