@@ -4,6 +4,6 @@ nm-applet 2>&1 > /dev/null &
 if [ "$1" = "f" ]; then
     protonvpn-cli c -f
 else
-    protonvpn-cli c US-FREE#4
+    protonvpn-cli c US-FREE#12
 fi
 killall nm-applet
