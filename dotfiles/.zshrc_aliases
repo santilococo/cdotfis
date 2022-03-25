@@ -96,7 +96,7 @@ function gith() {
 alias dcom='docker run -v ${PWD}:/root --security-opt seccomp:unconfined --user $(id -u):$(id -g) -w /root -ti agodio/itba-so:1.0'
 #alias dcom='docker run -v ${PWD}:/root --security-opt seccomp:unconfined --user $(id -u):$(id -g) -w /root --name TPE-ARQUI -ti agodio/itba-so:1.0'
 
-alias dcr='checkIfStarted'
+alias dcr='startDocker'
 
 function dcreate() {
     echo "Do you want to create a container with root or user (as the owner)?"
@@ -110,7 +110,7 @@ function dcreate() {
     fi
 }
 
-function checkIfStarted() {
+function startDocker() {
     if systemctl status docker | grep -q "inactive"; then
 	systemctl start docker
     fi
@@ -139,7 +139,7 @@ function dcmake() {
 }
 
 function dcstacho() {
-    checkIfStarted
+    startDocker
     local dockerID=$(docker ps -a --format "{{.Names}}" | dmenu)
     docker start $dockerID > /dev/null
     docker start $dockerID > /dev/null
@@ -147,7 +147,7 @@ function dcstacho() {
 }
 
 function dcsta() {
-    checkIfStarted
+    startDocker
     local dockerID=`docker ps -l`
     docker start $dockerID > /dev/null
     docker exec -it $dockerID bash $@
