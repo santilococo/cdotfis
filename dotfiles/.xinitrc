@@ -49,10 +49,10 @@ else
 
     # Restart network
     ~/.local/bin/netRestart &
-
-    # Fix dbus BUG with GNOME keyring
-    dbus-update-activation-environment --systemd DISPLAY
 fi
+
+# Fix dbus BUG with GNOME keyring
+dbus-update-activation-environment --systemd DISPLAY
 
 # Start GNOME keyring
 eval $(gnome-keyring-daemon --start)
