@@ -18,3 +18,5 @@ export R_LIBS_USER=$HOME/.config/R/library
 export R_HISTFILE=$HOME/.config/R/.Rhistory
 
 export QT_QPA_PLATFORMTHEME=gtk2
+
+export DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=1
